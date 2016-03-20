@@ -35,17 +35,6 @@ ItalicFont = Fontin-Italic.otf
 %Tweak a bit the top margin
 %\addtolength{\voffset}{-1.3cm}
 
-%Italian hyphenation for the word: ''corporations''
-\hyphenation{im-pre-se}
-
-%-------------WATERMARK TEST [**not part of a CV**]---------------
-\usepackage[absolute]{textpos}
-
-\setlength{\TPHorizModule}{30mm}
-\setlength{\TPVertModule}{\TPHorizModule}
-\textblockorigin{2mm}{0.65\paperheight}
-\setlength{\parindent}{0pt}
-
 %--------------------BEGIN DOCUMENT----------------------
 \begin{document}
 
@@ -84,10 +73,12 @@ ItalicFont = Fontin-Italic.otf
   Prometheus  & Distributed, automated test running tool\\
               & \emph{Closed source}\\
               & \footnotesize{Runs cucumber test suites across machines with different configurations. Gives QA access to livestreams of tests as well as live logs. Analyzes logs from test runs and uses that information to highlight tests that are more likely to fail, prioritizing those first.}\\
+  \multicolumn{2}{c}{}\\
   Fudd        & MySQL binlog deserializer and RabbitMQ publisher\\
               & \emph{MySQL library source:}\ \href{https://github.com/granicus/mysql-binlog-go}{https://github.com/granicus/mysql-binlog-go}\\
               & \emph{Other components are closed source}\\
               & \footnotesize{Built to solve specific problem with legacy software in which we could not easily replicate model transactions to RabbitMQ. No MySQL binlog deserializer would work for our version of MySQL, so one had to bo built from scratch. Tails the binlog live on the database server and takes advantage of concurrency to keep up with the application's high throughput.}\\
+  \multicolumn{2}{c}{}\\
   Zeus        & Easily configurable, highly concurrent service bus\\
               & \emph{Source:}\ \href{https://github.com/nholland94/zeus}{https://github.com/nholland94/zeus}\\
               & \footnotesize{Designed to make wiring restful service oriented architectures easy. Still maintains a high level of configurability. Written and configured in Elixir, but requires little knowledge of the language to use.}\\
