@@ -1,0 +1,128 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Nathan \textsc{Holland}
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Personal Data}
+
+\begin{tabular}{rl}
+  \textsc{Place and Date of Birth:} & Indianapolis, Indiana  | April 6 1994 \\
+  \textsc{Address:}   & 460 S Marion Pkwy Apt \#1756B, Denver, CO 80209 \\
+  \textsc{Phone:}     & (201)-317-1487\\
+  \textsc{Email:}     & \href{mailto:nholland94@gmail.com}{nholland94@gmail.com}\\
+  \textsc{Github:}    & \href{https://github.com/nholland94}{https://github.com/nholland94}
+\end{tabular}
+
+\section{Work Experience}
+\begin{tabular}{r|p{11cm}}
+  % I need to lern latex...
+  \ \ \ \ \ \ \ \emph{Current} & Software Developer\\
+  \textsc{Dec 2013}            & \emph{Granicus} \\
+                               & \footnotesize{Developed internal projects to support legacy software. Spearheaded development on new products. Taught other developers various programming languages, technologies, and techniques. Investigated new technologies for the company and provided analysis. Worked on automated deployment system and tools associated with it. Built build processes for frontend applications.}\\
+  \multicolumn{2}{c}{}\\
+\end{tabular}
+
+\section{Projects}
+\begin{tabular}{r|p{11cm}}
+  Prometheus  & Distributed, automated test running tool\\
+              & \emph{Closed source}\\
+              & \footnotesize{Runs cucumber test suites across machines with different configurations. Gives QA access to livestreams of tests as well as live logs. Analyzes logs from test runs and uses that information to highlight tests that are more likely to fail, prioritizing those first.}\\
+  Fudd        & MySQL binlog deserializer and RabbitMQ publisher\\
+              & \emph{MySQL library source:}\ \href{https://github.com/granicus/mysql-binlog-go}{https://github.com/granicus/mysql-binlog-go}\\
+              & \emph{Other components are closed source}\\
+              & \footnotesize{Built to solve specific problem with legacy software in which we could not easily replicate model transactions to RabbitMQ. No MySQL binlog deserializer would work for our version of MySQL, so one had to bo built from scratch. Tails the binlog live on the database server and takes advantage of concurrency to keep up with the application's high throughput.}\\
+  Zeus        & Easily configurable, highly concurrent service bus\\
+              & \emph{Source:}\ \href{https://github.com/nholland94/zeus}{https://github.com/nholland94/zeus}\\
+              & \footnotesize{Designed to make wiring restful service oriented architectures easy. Still maintains a high level of configurability. Written and configured in Elixir, but requires little knowledge of the language to use.}\\
+\end{tabular}
+
+\section{Programming Languages}
+\begin{tabular}{rl}
+  \textsc{Highly Proficient:}     & C, OCaml, Ruby, Go, Javascript, PHP, Java, Lua, Elixir\\
+  \textsc{Moderately Proficient:} & Lisp (specifically Scheme), x86 assembly, Python\\
+  \textsc{Mildly Proficient:}     & Factor, Ada, Nim, Rust, APL, Haskell\\
+\end{tabular}
+
+\section{Technologies}
+\begin{tabular}{rl}
+  \textsc{Web Development:}    & Rails, Phoenix, React.js, Backbone.js, Underscore.js, WebSockets,\\
+                               & Socket.io, Apache, HTML, CSS\\
+  \textsc{Other Technologies:} & Linux, SQL, Chef, Makefile, Grunt, Xlib, Wayland, OpenGL\\
+\end{tabular}
+
+\section{Awards and Activities}
+\begin{tabular}{rl}	
+  2011 and 2012 & "Excellence in Computer Science" - Gill St. Bernard's School\\
+  2010          & Receive a 5 in AP Computer Science\\
+  2010          & Worked with a Computer Science graduate student at Drexel University\\
+                & \emph{Worked on optimizing N-Body simulator by performing calculations in parallel on GPUs}\\
+  2011 - 2012   & Designed and participated in a programming independent study during highschool\\
+                & \emph{Included artificial neural networks and DirectX 3D work}\\
+  2008 - 2012   & Programmed on First Robotics Competition (FRC) team 2458\\
+\end{tabular}
+
+\section{Interests and Activities}
+Programming Languages, Compilers, Kernels, Music Visualization, Virtual Reality, Puzzles\\
+
+%\hypertarget{gmat}{\textsc{Gmat}\setmainfont{LMRoman10 Regular}\textregistered\setmainfont[SmallCapsFont=Fontin-SmallCaps]{Fontin-Regular}}
+
+%\XeTeXpdffile ''GMAT.pdf'' page 1 scaled 800
+
+\end{document}
