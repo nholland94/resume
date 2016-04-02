@@ -48,11 +48,8 @@ ItalicFont = Fontin-Italic.otf
 	}\bigskip\par}
 
 %--------------------SECTIONS-----------------------------------
-%Section: Personal Data
 \section{Personal Data}
-
 \begin{tabular}{rl}
-  \textsc{Place and Date of Birth:} & Indianapolis, Indiana  | April 6 1994 \\
   \textsc{Address:}   & 460 S Marion Pkwy Apt \#1756B, Denver, CO 80209 \\
   \textsc{Phone:}     & (201)-317-1487\\
   \textsc{Email:}     & \href{mailto:nholland94@gmail.com}{nholland94@gmail.com}\\
@@ -65,7 +62,6 @@ ItalicFont = Fontin-Italic.otf
   \ \ \ \ \ \ \ \emph{Current} & Software Developer\\
   \textsc{Dec 2013}            & \emph{Granicus} \\
                                & \footnotesize{Developed internal projects to support legacy software. Spearheaded development on new products. Taught other developers various programming languages, technologies, and techniques. Investigated new technologies for the company and provided analysis. Worked on automated deployment system and tools associated with it. Built build processes for frontend applications.}\\
-  \multicolumn{2}{c}{}\\
 \end{tabular}
 
 \section{Projects}
@@ -73,15 +69,18 @@ ItalicFont = Fontin-Italic.otf
   Prometheus  & Distributed, automated test running tool\\
               & \emph{Closed source}\\
               & \footnotesize{Runs cucumber test suites across machines with different configurations. Gives QA access to livestreams of tests as well as live logs. Analyzes logs from test runs and uses that information to highlight tests that are more likely to fail, prioritizing those first.}\\
+              & \footnotesize{Technologies: Go, AWS, Azure, Cucumber}\\
   \multicolumn{2}{c}{}\\
   Fudd        & MySQL binlog deserializer and RabbitMQ publisher\\
               & \emph{MySQL library source:}\ \href{https://github.com/granicus/mysql-binlog-go}{https://github.com/granicus/mysql-binlog-go}\\
               & \emph{Other components are closed source}\\
-              & \footnotesize{Built to solve specific problem with legacy software in which we could not easily replicate model transactions to RabbitMQ. No MySQL binlog deserializer would work for our version of MySQL, so one had to bo built from scratch. Tails the binlog live on the database server and takes advantage of concurrency to keep up with the application's high throughput.}\\
+              & \footnotesize{Built to solve specific problem with legacy software in which we could not easily replicate model transactions to RabbitMQ. No MySQL binlog deserializer would work for our version of MySQL, so one had to be built from scratch. Tails the binlog live on the database server and takes advantage of concurrency to keep up with the application's high throughput.}\\
+              & \footnotesize{Technologies: Go, MySQL, RabbitMQ}\\
   \multicolumn{2}{c}{}\\
-  Zeus        & Easily configurable, highly concurrent service bus\\
+  Zeus        & Easily configurable, highly concurrent, extensible service bus DSL\\
               & \emph{Source:}\ \href{https://github.com/nholland94/zeus}{https://github.com/nholland94/zeus}\\
               & \footnotesize{Designed to make wiring restful service oriented architectures easy. Still maintains a high level of configurability. Written and configured in Elixir, but requires little knowledge of the language to use.}\\
+              & \footnotesize{Technologies: Elixir, Beam VM, OTP}\\
 \end{tabular}
 
 \section{Programming Languages}
@@ -110,7 +109,7 @@ ItalicFont = Fontin-Italic.otf
 \end{tabular}
 
 \section{Interests and Activities}
-Programming Languages, Compilers, Kernels, Music Visualization, Virtual Reality, Puzzles\\
+Programming Languages, Compilers, Kernels, Music Visualization, Virtual Reality, Puzzles, Vulkan\\
 
 %\hypertarget{gmat}{\textsc{Gmat}\setmainfont{LMRoman10 Regular}\textregistered\setmainfont[SmallCapsFont=Fontin-SmallCaps]{Fontin-Regular}}
 
