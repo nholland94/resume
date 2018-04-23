@@ -1,6 +1,7 @@
 \documentclass[a4paper,10pt]{article}
 
 %A Few Useful Packages
+\usepackage{scrextend}
 \usepackage{marvosym}
 \usepackage{fontspec} 					%for loading fonts
 \usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
@@ -50,71 +51,88 @@ ItalicFont = Fontin-Italic.otf
 %--------------------SECTIONS-----------------------------------
 \section{Personal Data}
 \begin{tabular}{rl}
-  \textsc{Address:}   & 460 S Marion Pkwy Apt \#1756B, Denver, CO 80209 \\
+  \textsc{Address:}   & 818 N Logan St. Apt. \#906, Denver, CO 80203 \\
   \textsc{Phone:}     & (201)-317-1487\\
   \textsc{Email:}     & \href{mailto:nholland94@gmail.com}{nholland94@gmail.com}\\
   \textsc{Github:}    & \href{https://github.com/nholland94}{https://github.com/nholland94}
 \end{tabular}
 
+\section{About Me}
+\begin{addmargin}[3em]{1em}
+I am a passionate, self-taught programmer with an interest in many different programming disciplines. Some of the topics that excite me the most are programming languages, compilers, parallelism, and 3d graphics, but I also have a good deal of experience with full stack web development and DevOps tools and practices.  Whenever a new challenge faces me, even if I am not familiar with some of the details behind the challenge, nothing stops me from diving into the underlying details or theory and tackling the challenge head on.  I am always interested in oppurtunities to improve my programming skills, both inside and outside of the workplace.
+\end{addmargin}
+
+
 \section{Work Experience}
 \begin{tabular}{r|p{11cm}}
-  % I need to lern latex...
-  \ \ \ \ \ \ \ \emph{Current} & Software Developer\\
-  \textsc{Dec 2013}            & \emph{Granicus} \\
-                               & \footnotesize{Developed internal projects to support legacy software. Spearheaded development on new products. Taught other developers various programming languages, technologies, and techniques. Investigated new technologies for the company and provided analysis. Worked on automated deployment system and tools associated with it. Built build processes for frontend applications.}\\
+  % I need to learn latex...
+  \ \ \ \ \ \ \ \emph{Current}    & Founder / CTO\\
+                \textsc{Aug 2017} & \emph{Bitversity LLC}\\
+                                  & \footnotesize{Designed and developed technology for an online course which teaches programming to people with no prior experience. The course revolves around simplified programming languages and a simple virtual machine designed to teach various programming paradigms and techniques rather than specific real world languages. The custom compilers and virtual machines allow for advanced introspection into the code students write and how it executes.}\\
+                                  & \footnotesize{Technologies: OCaml, Javascript, Elixir, js\_of\_ocaml}\\
+                                  & \footnotesize{Skills: language design, teaching, compilers, full stack}\\
+  \multicolumn{2}{c}{}\\
+
+  \ \ \ \ \ \ \ \textsc{Aug 2017} & Software Engineer - Compilers\\
+                \textsc{Nov 2016} & \emph{Self Employed}\\
+                                  & \footnotesize{Worked on the creation of an array programming language with an emphasis on optimizable parallelism. Developed compiler primitives, runtime execution system (through Vulkan), and experimented with various forms of optimization. Researched and implemented optimizations on sparse resource graphs using petri nets.}\\
+                                  & \footnotesize{Technologies: OCaml, D, Prolog, Vulkan}\\
+                                  & \footnotesize{Skills: language design, compilers, optimization, parallelism, GPGPU programming, execution analysis}\\
+  \multicolumn{2}{c}{}\\
+
+  \ \ \ \ \ \ \ \textsc{Nov 2016} & Software Engineer - Full Stack\\
+                \textsc{Dec 2013} & \emph{Granicus}\\
+                                  & \footnotesize{Developed internal projects to support legacy software. Spearheaded development on new products. Taught other developers various programming languages, technologies, and techniques. Investigated new technologies for the company and provided analysis. Worked on automated deployment system and tools associated with it. Built build processes for frontend applications.}\\
+                                  & \footnotesize{Technologies: Javascript, Ruby, PHP, C\#, Go, React, Electron, Chef, AWS, MongoDB, MySQL, PostgresSQL}\\
+                                  & \footnotesize{Skills: teaching, leadership, prototyping, full stack}\\
 \end{tabular}
 
 \section{Projects}
 \begin{tabular}{r|p{11cm}}
+  Bynar       & High level GPGPU compute library\\
+              & \emph{Source:}\ \href{}{}\\
+              & \footnotesize{Provides a high level interface for execution stages on larg data sets. Execution stages are joined together and dynamically run on the CPU or GPU, depending on input data size. Fences and data transfers between stages are automated.}\\
+  \multicolumn{2}{c}{}\\
+
   Prometheus  & Distributed, automated test running tool\\
               & \emph{Closed source}\\
-              & \footnotesize{Runs cucumber test suites across machines with different configurations. Gives QA access to livestreams of tests as well as live logs. Analyzes logs from test runs and uses that information to highlight tests that are more likely to fail, prioritizing those first.}\\
-              & \footnotesize{Technologies: Go, AWS, Azure, Cucumber}\\
+              & \footnotesize{Manages and executes test suites accross multiple testing environments. Supports provisioning environments via the cloud, as well as job distribution to static hosts. Provides a dashboard to QA to automate and dispatch testing jobs, as well as display results and frequency of errors across tests.}\\
   \multicolumn{2}{c}{}\\
+
   Fudd        & MySQL binlog deserializer and RabbitMQ publisher\\
               & \emph{MySQL library source:}\ \href{https://github.com/granicus/mysql-binlog-go}{https://github.com/granicus/mysql-binlog-go}\\
               & \emph{Other components are closed source}\\
-              & \footnotesize{Built to solve specific problem with legacy software in which we could not easily replicate model transactions to RabbitMQ. No MySQL binlog deserializer would work for our version of MySQL, so one had to be built from scratch. Tails the binlog live on the database server and takes advantage of concurrency to keep up with the application's high throughput.}\\
-              & \footnotesize{Technologies: Go, MySQL, RabbitMQ}\\
+              & \footnotesize{Built to solve specific problem with legacy software. Streams and deserializes MySQL binlogs and publishes certain model transactions over RabbitMQ. No existing MySQL binlog deserializer worked for the version of required MySQL at the time, so one had to be built from scratch. Performs block deserialization and message publishing concurrently.}\\
   \multicolumn{2}{c}{}\\
-  Zeus        & Easily configurable, highly concurrent, extensible service bus DSL\\
-              & \emph{Source:}\ \href{https://github.com/nholland94/zeus}{https://github.com/nholland94/zeus}\\
-              & \footnotesize{Designed to make wiring restful service oriented architectures easy. Still maintains a high level of configurability. Written and configured in Elixir, but requires little knowledge of the language to use.}\\
-              & \footnotesize{Technologies: Elixir, Beam VM, OTP}\\
-  \multicolumn{2}{c}{}\\
-  PAL         & Array programming language which compiles to run on GPUs\\
-              & \emph{Source:}\ \href{https://github.com/nholland94/pal}{https://github.com/nholland94/pal}\\
-              & \footnotesize{A high level programming language based off of APL. Compiles down to SPIR-V shader modules and layer dependency graphs. Dynamically assigns tasks to queues across devices during runtime.}\\
-              & \footnotesize{Technologies: OCaml, C, Prolog, CLPFD}\\
 \end{tabular}
 
 \section{Programming Languages}
 \begin{tabular}{rl}
-  \textsc{Highly Proficient:}     & C, OCaml, Ruby, Go, Javascript, PHP, Java, Lua, Elixir\\
-  \textsc{Moderately Proficient:} & Lisp (specifically Scheme), x86 assembly, Python, Prolog, SML\\
-  \textsc{Mildly Proficient:}     & Factor, Ada, Nim, Rust, APL, Haskell, Red, ATS\\
+  \textsc{Highly Proficient:}     & C, OCaml, Elixir, Ruby, Go, Javascript, PHP, Java, Prolog, Lua\\
+  \textsc{Moderately Proficient:} & Lisp (specifically Scheme), x86 assembly, APL, Ada, D, Python\\
+  \textsc{Mildly Proficient:}     & Factor, Rust, Haskell, Red, ATS, Coq\\
 \end{tabular}
 
 \section{Technologies}
 \begin{tabular}{rl}
   \textsc{Web Development:}    & Rails, Phoenix, React.js, Backbone.js, Underscore.js, WebSockets,\\
-                               & Socket.io, Apache, HTML, CSS\\
-  \textsc{Other Technologies:} & Linux, SQL, Chef, Makefile, Grunt, Xlib, Wayland, OpenGL\\
+                               & Socket.io, Apache, Lighttpd, HTML, CSS\\
+  \textsc{Other Technologies:} & Linux, SQL, Chef, Makefile, Ocamlbuild, Grunt, Xlib, Wayland, OpenGL, Vulkan\\
 \end{tabular}
 
-\section{Awards and Activities}
-\begin{tabular}{rl}	
-  2011 and 2012 & "Excellence in Computer Science" - Gill St. Bernard's School\\
-  2010          & Receive a 5 in AP Computer Science\\
-  2010          & Worked with a Computer Science graduate student at Drexel University\\
-                & \emph{Worked on optimizing N-Body simulator by performing calculations in parallel on GPUs}\\
-  2011 - 2012   & Designed and participated in a programming independent study during highschool\\
-                & \emph{Included artificial neural networks and DirectX 3D work}\\
-  2008 - 2012   & Programmed on First Robotics Competition (FRC) team 2458\\
-\end{tabular}
+% \section{Awards and Activities}
+% \begin{tabular}{rl}	
+%   2011 and 2012 & "Excellence in Computer Science" - Gill St. Bernard's School\\
+%   2010          & Receive a 5 in AP Computer Science\\
+%   2010          & Worked with a Computer Science graduate student at Drexel University\\
+%                 & \emph{Worked on optimizing N-Body simulator by performing calculations in parallel on GPUs}\\
+%   2011 - 2012   & Designed and participated in a programming independent study during highschool\\
+%                 & \emph{Included artificial neural networks and DirectX 3D work}\\
+%   2008 - 2012   & Programmed on First Robotics Competition (FRC) team 2458\\
+% \end{tabular}
 
-\section{Interests and Activities}
-Programming Languages, Compilers, Kernels, Music Visualization, Virtual Reality, Puzzles, Vulkan\\
+\section{Interests}
+Programming Languages, Compilers, Optimization, Parallelism, Operating System Kernels, Music Visualization, Music Generation, Virtual Reality, Neural Networks, Vulkan, Game Engines, Puzzles\\
 
 %\hypertarget{gmat}{\textsc{Gmat}\setmainfont{LMRoman10 Regular}\textregistered\setmainfont[SmallCapsFont=Fontin-SmallCaps]{Fontin-Regular}}
 
